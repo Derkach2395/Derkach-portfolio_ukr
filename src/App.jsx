@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Menu, X } from 'lucide-react'
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+const API = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:8000' : '')
 const samples = [
   { id: 1, title: 'Історії, які хочеться пам’ятати', category: 'Фотографія', description: 'Живі емоції, природне світло й увага до деталей. Зберігаю атмосферу важливих подій у кадрах, до яких хочеться повертатися.', image_url: '/assets/wedding.jpg', accent: 'orange' },
   { id: 2, title: 'Відео з характером', category: 'Відеовиробництво', description: 'Композиція, рух камери, світло й монтаж поєднуються у цілісну візуальну розповідь.', image_url: '/assets/навчання.png', accent: 'blue' },

@@ -38,6 +38,16 @@ npm run dev
 
 Vite працює на http://localhost:5173 та звертається до API на `http://localhost:8000`. Для іншої адреси API задайте `VITE_API_URL` перед запуском Vite. Бекенд налаштовується через `DATABASE_URL` і `FRONTEND_ORIGINS`.
 
+## Публікація в інтернеті через Render
+
+1. Відправте актуальні зміни в GitHub: `git add .`, `git commit -m "Підготовлено розгортання"`, `git push origin main`.
+2. У Render створіть PostgreSQL базу даних та скопіюйте її **Internal Database URL**.
+3. Створіть **New → Web Service**, під'єднайте GitHub репозиторій і виберіть Docker як середовище. Render збере кореневий `Dockerfile`.
+4. У змінних середовища сервісу додайте `DATABASE_URL` зі скопійованим Internal Database URL.
+5. Після успішного Deploy відкрийте адресу `onrender.com`, яку Render покаже для Web Service.
+
+Для публічного сайту потрібні Web Service і PostgreSQL база у хостингу. Обмеження та оплата залежать від вибраного плану. Не використовуйте адресу `localhost` як посилання для роботодавця.
+
 ## API
 
 - `GET /api/health` — стан API.
